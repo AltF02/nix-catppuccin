@@ -8,7 +8,11 @@
 in {
   options = {
     programs.helix.catppuccin = {
-      enable = lib.mkEnableOption;
+      enable = mkOption {
+        default = false;
+        example = true;
+        type = types.bool;
+      };
       # TODO: Add no_italics
     };
   };
