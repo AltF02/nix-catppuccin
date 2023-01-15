@@ -7,6 +7,6 @@
     self,
     nixpkgs,
   }: {
-    nixosModules.catppuccin.helix = import ./modules/catppuccin/helix/default.nix;
+    nixosModules.catppuccin = import ./modules/catppuccin;
   };
 }
