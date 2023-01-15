@@ -18,7 +18,7 @@ in {
   };
 
   config = let
-    tn = "catppuccin_${config.options.catppuccin}";
+    tn = "catppuccin_${options.catppuccin.theme}";
   in
     lib.mkIf cfg.enable {
       programs.helix = {
