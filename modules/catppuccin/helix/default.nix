@@ -27,6 +27,7 @@ in {
             owner = "catppuccin";
             repo = "helix";
             rev = "549327c8e091140f5c8f8e0bbd83004bf148712f";
+            sha256 = "sha256-8z4MMoOZrn3TUi1J/oOwqtVOypvaxszZyzRcPgmh2Jo=";
           }
           + "/themes/default/${tn}.toml");
 
