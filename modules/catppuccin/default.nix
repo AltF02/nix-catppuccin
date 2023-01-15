@@ -5,10 +5,6 @@
   ...
 }:
 with lib; {
-  imports = [
-    "./helix"
-  ];
-
   options = {
     catppuccin = {
       theme = mkOption {
@@ -18,4 +14,9 @@ with lib; {
       };
     };
   };
+
+    imports = [
+      "./helix/module.nix"
+    ];
+
 }
