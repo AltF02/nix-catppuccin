@@ -25,7 +25,7 @@ in {
           }
           + "/themes/default/${tn}.toml");
 
-        theme = tn;
+        settings.theme = tn;
       };
     };
 }
