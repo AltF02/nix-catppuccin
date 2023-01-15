@@ -11,7 +11,7 @@ in {
       enable = lib.mkOption {
         default = false;
         example = true;
-        type = types.bool;
+        type = lib.types.bool;
       };
       # TODO: Add no_italics
     };
