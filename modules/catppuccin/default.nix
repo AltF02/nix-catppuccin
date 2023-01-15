@@ -8,8 +8,8 @@ with lib; {
   options = {
     catppuccin = {
       theme = mkOption {
-        type = types.nullOr (types.enum ["latte" "frappe" "macchiato" "mocha"]);
-        default = null;
+        type = types.enum ["latte" "frappe" "macchiato" "mocha"];
+        default = "mocha";
         example = "mocha";
       };
     };
