@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  options,
   ...
 }: let
   cfg = config.programs.helix.catppuccin;
