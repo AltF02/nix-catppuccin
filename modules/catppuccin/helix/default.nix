@@ -8,7 +8,7 @@
 in {
   options = {
     programs.helix.catppuccin = {
-      enable = mkOption {
+      enable = lib.mkOption {
         default = false;
         example = true;
         type = types.bool;
