@@ -16,6 +16,7 @@ with lib; {
   };
 
   imports = [
+    ./grub
     ./helix
     ./sddm
   ];
