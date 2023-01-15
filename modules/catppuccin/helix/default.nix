@@ -24,7 +24,7 @@ in {
     lib.mkIf cfg.enable {
       programs.helix.settings.theme = n;
 
-      xdg.configFile."helix/themes/${n}.toml" =
+      xdg.configFile."helix/themes/${n}.toml".source =
         pkgs.fetchFromGitHub {
           owner = "catppuccin";
           repo = "helix";
