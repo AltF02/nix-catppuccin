@@ -1,3 +1,3 @@
-# nix-overlay
+# nix-catppuccin
 
-Personal nix packages
+Catppuccin nix packages
