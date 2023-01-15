@@ -17,5 +17,6 @@ with lib; {
 
   imports = [
     ./helix
+    ./sddm
   ];
 }
