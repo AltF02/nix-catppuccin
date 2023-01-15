@@ -9,5 +9,5 @@
   }: {
     nixosModules.catppuccin = import ./modules/catppuccin;
     nixosModules.default = inputs.self.nixosModules.catppuccin;
- };
+  };
 }

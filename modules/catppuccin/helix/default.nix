@@ -18,14 +18,14 @@ in {
   in
     lib.mkIf cfg.enable {
       programs.helix = {
-       themes."${tn}" = builtins.readFile (pkgs.fetchFromGitHub {
-          owner = "catppuccin";
-          repo = "helix";
-          rev = "549327c8e091140f5c8f8e0bbd83004bf148712f";
-        }
-        + "/themes/default/${tn}.toml");
-      };
+        themes."${tn}" = builtins.readFile (pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "helix";
+            rev = "549327c8e091140f5c8f8e0bbd83004bf148712f";
+          }
+          + "/themes/default/${tn}.toml");
 
-      theme = tn;
+        theme = tn;
+      };
     };
 }
