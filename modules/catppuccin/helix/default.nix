@@ -19,19 +19,18 @@ in {
   };
 
   config = let
-    tn = "catppuccin_${config.catppuccin.theme}";
+    n = "catppuccin_${config.catppuccin.theme}";
   in
     lib.mkIf cfg.enable {
-      programs.helix = {
-        themes."${tn}" = builtins.readFile (pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "helix";
-            rev = "549327c8e091140f5c8f8e0bbd83004bf148712f";
-            sha256 = "sha256-8z4MMoOZrn3TUi1J/oOwqtVOypvaxszZyzRcPgmh2Jo=";
-          }
-          + "/themes/default/${tn}.toml");
+      programs.helix.settings.theme = n;
 
-        settings.theme = tn;
-      };
+      xdg.configFile."helix/themes/${n}.toml" =
+        pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "helix";
+          rev = "549327c8e091140f5c8f8e0bbd83004bf148712f";
+          sha256 = "sha256-8z4MMoOZrn3TUi1J/oOwqtVOypvaxszZyzRcPgmh2Jo=";
+        }
+        + "/themes/default/${n}.toml";
     };
 }
