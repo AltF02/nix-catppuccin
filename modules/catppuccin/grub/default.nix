@@ -14,11 +14,17 @@ in {
         example = true;
         type = lib.types.bool;
       };
+
+      palette = mkOption {
+        type = types.enum ["latte" "frappe" "macchiato" "mocha"];
+        default = "mocha";
+        example = "mocha";
+      };
     };
   };
 
   config = let
-    n = "catppuccin-${config.catppuccin.theme}-grub-theme";
+    n = "catppuccin-${cfg.palette}-grub-theme";
   in
     lib.mkIf cfg.enable {
       boot.loader.grub.theme = "${(pkgs.fetchFromGitHub {

@@ -14,11 +14,17 @@ in {
         example = true;
         type = lib.types.bool;
       };
+
+      palette = mkOption {
+        type = types.enum ["latte" "frappe" "macchiato" "mocha"];
+        default = "mocha";
+        example = "mocha";
+      };
     };
   };
 
   config = let
-    n = "catppuccin-${config.catppuccin.theme}";
+    n = "catppuccin-${cfg.palette}";
   in
     lib.mkIf cfg.enable {
       services.xserver.displayManager.sddm.theme = "${(pkgs.fetchFromGitHub {
