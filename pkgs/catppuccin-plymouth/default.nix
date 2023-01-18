@@ -20,7 +20,7 @@ pkgs.stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    cp -r themes/* / $out/share/plymouth/themes
+    cp -r themes/* / $out/share/plymouth/themes/
     for theme in plymouth/themes/*/*.plymouth; do mkdir -p $out/share/plymouth/themes/$(basename "$theme" .plymouth) && cat $theme | sed  "s@\/usr\/@$out\/@" > $out/share/plymouth/themes/$(basename "$theme" .plymouth)/$(basename $theme); done
   '';
 }
