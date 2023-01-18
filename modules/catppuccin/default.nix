@@ -7,6 +7,7 @@
 with lib; {
   imports = [
     ./grub
+    ./plymouth
     ./sddm
   ];
 }
