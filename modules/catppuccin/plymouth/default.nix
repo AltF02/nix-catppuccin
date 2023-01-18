@@ -5,10 +5,10 @@
   options,
   ...
 }: let
-  cfg = config.services.xserver.displayManager.sddm.catppuccin;
+  cfg = config.boot.plymouth.catppuccin;
 in {
   options = {
-    programs.services.xserver.displayManager.sddm.catppuccin = {
+    boot.plymouth.catppuccin = {
       enable = lib.mkOption {
         default = false;
         example = true;
@@ -27,12 +27,14 @@ in {
     n = "catppuccin-${cfg.palette}";
   in
     lib.mkIf cfg.enable {
-      services.xserver.displayManager.sddm.theme = "${(pkgs.fetchFromGitHub {
+      boot.plymouth.themePackages = [ "${(pkgs.fetchFromGitHub {
           owner = "catppuccin";
-          repo = "sddm";
-          rev = "bde6932e1ae0f8fdda76eff5c81ea8d3b7d653c0";
-          sha256 = "sha256-ceaK/I5lhFz6c+UafQyQVJIzzPxjmsscBgj8130D4dE=";
+          repo = "plymouth";
+          rev = "d4105cf336599653783c34c4a2d6ca8c93f9281c";
+          sha256 = "sha256-quBSH8hx3gD7y1JNWAKQdTk3CmO4t1kVo4cOGbeWlNE=";
         }
-        + "/src/${n}")}";
+        + "/themes/${n}")}" ];
+
+      boot.plymouth.theme = n;
     };
 }
