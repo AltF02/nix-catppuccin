@@ -15,7 +15,7 @@ in {
         type = lib.types.bool;
       };
 
-      palette = mkOption {
+      palette = lib.mkOption {
         type = types.enum ["latte" "frappe" "macchiato" "mocha"];
         default = "mocha";
         example = "mocha";
