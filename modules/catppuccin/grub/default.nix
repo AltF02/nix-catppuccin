@@ -16,7 +16,7 @@ in {
       };
 
       palette = lib.mkOption {
-        type = types.enum ["latte" "frappe" "macchiato" "mocha"];
+        type = lib.types.enum ["latte" "frappe" "macchiato" "mocha"];
         default = "mocha";
         example = "mocha";
       };
