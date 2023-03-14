@@ -23,7 +23,7 @@ in {
     loc = "alacritty/catppuccin/${n}.yml";
   in
     lib.mkIf cfg.enable {
-      programs.alacritty.settings.import = [ "${xdg.configHome}/${loc}" ];
+      programs.alacritty.settings.import = [ xdg.configFile."${loc}".target ];
 
       xdg.configFile."${loc}".source =
         pkgs.fetchFromGitHub {
