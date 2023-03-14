@@ -16,6 +16,7 @@ with lib; {
   };
 
   imports = [
+    ./alacritty
     ./helix
   ];
 }
